@@ -9,6 +9,9 @@ class Role(models.Model):
 
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name='Роль користувача'
+        verbose_name_plural='Ролі користувачів'
 
 
 class UserProfile(models.Model):
@@ -18,3 +21,6 @@ class UserProfile(models.Model):
     phone = models.CharField(max_length=15,verbose_name='номер телефону',unique=True,blank=True,null=True)
     def __str__(self):
         return self.user.username
+    class Meta:
+        verbose_name='Профіль користувача'
+        verbose_name_plural='Профілі користувачів'

@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 
-urlpatterns = [
+from menu import views
 
+urlpatterns = [
+    path('', views.MenuList.as_view(), name='menu-list'),
 ]

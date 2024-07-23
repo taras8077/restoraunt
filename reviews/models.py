@@ -13,3 +13,7 @@ class Review(models.Model):
     rating=models.PositiveIntegerField(default=0)
     status = models.CharField(max_length=255, default='new')
     created_at = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        verbose_name='Відгук'
+        verbose_name_plural='Відгуки'
+        ordering=['dish','created_at']

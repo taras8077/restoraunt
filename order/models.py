@@ -9,10 +9,16 @@ from menu.models import Dish
 class Cart(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE, related_name='cart')
     created_at=models.DateTimeField(auto_now_add=True)
+    class Meta:
+        verbose_name='Кошик'
+        verbose_name_plural='Кошики'
 class Item_in_cart(models.Model):
     cart=models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items')
     dish=models.ForeignKey(Dish, on_delete=models.CASCADE)
     quantity=models.IntegerField(default=1)
+    class Meta:
+        verbose_name='Страва в кошику'
+        verbose_name_plural='Страви в кошику'
 class Order(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
     cart=models.ForeignKey(Cart, on_delete=models.CASCADE)
@@ -26,3 +32,6 @@ class Order(models.Model):
     payment_method=models.CharField(max_length=255, choices=PAYMENT_CHOICES)
     status=models.CharField(max_length=255, default='new')
     comment=models.TextField(blank=True, null=True)
+    class Meta:
+        verbose_name='Замовлення'
+        verbose_name_plural='Замовлення'

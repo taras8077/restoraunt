@@ -8,6 +8,6 @@ from menu.models import Dish
 
 class MenuList(ListView):
     model = Dish
-    context_object_name = "dishes"
-    template_name = ""
+    context_object_name = "menu_list"
+    template_name = "menu/menu_list.html"
     paginate_by = 10
