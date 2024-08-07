@@ -22,7 +22,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Категорії
+          </a>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'menu-list' %}">Усі страви</a>
+              <li><hr class="dropdown-divider"></li>
+              {% for category in categories %}
+            <li><a class="dropdown-item" href="{% url 'category-list' pk=category.pk %}">{{category.name}}</a>
+            </li>
+              {% endfor %}
+          </ul>
+        </li>
       </ul>
      {% if request.user.is_authenticated %}
           <form action="{% url 'accounts:logout' %}" method="post">

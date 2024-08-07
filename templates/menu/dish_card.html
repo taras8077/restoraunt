@@ -1,0 +1,18 @@
+ <div class="card">
+           {% if dish.photo %}
+           <img src="{{ dish.photo.url }}" class="card-img-top" alt="...">
+           {% endif %}
+     <div class="card-body">
+         <h5 class="card-title">{{ dish.name }}</h5>
+         <p class="card-text">{{ dish.price }} грн</p>
+         <div class='mb-3'>
+             {% if dish.is_available %}
+            <span class="badge text-bg-success">В наявності</span>
+            {% else %}
+            <span class="badge text-bg-secondary">Немає в наявності</span>
+            {% endif %}
+         </div>
+         <a href="{% url 'dish-detail' pk=dish.pk %}" class="stretched-link"></a>
+         <button class="btn btn-primary">Додати до кошика</button>
+     </div>
+ </div>

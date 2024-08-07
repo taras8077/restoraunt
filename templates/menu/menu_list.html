@@ -6,16 +6,7 @@
        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
          {% for dish in menu_list %}
            <div class="col">
-           <div class="card">
-           {% if dish.photo %}
-           <img src="{{ dish.photo.url }}" class="card-img-top" alt="...">
-           {% endif %}
-           <div class="card-body">
-             <h5 class="card-title">{{ dish.name }}</h5>
-             <p class="card-text">{{ dish.price }} грн</p>
-             <a href="#" class="btn btn-primary">Додати до кошика</a>
-           </div>
-         </div>
+            {% include 'menu/dish_card.html' %}
            </div>
 
          {% endfor %}
