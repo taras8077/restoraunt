@@ -15,7 +15,7 @@ class Cart(models.Model):
 class Item_in_cart(models.Model):
     cart=models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items')
     dish=models.ForeignKey(Dish, on_delete=models.CASCADE)
-    quantity=models.IntegerField(default=1)
+    quantity=models.IntegerField(default=1, verbose_name='кількість')
     class Meta:
         verbose_name='Страва в кошику'
         verbose_name_plural='Страви в кошику'

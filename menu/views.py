@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
 from menu.models import Dish, Category
+from order.forms import AddToCartForm
 
 
 # Create your views here.
@@ -23,3 +24,8 @@ class DishDetailView(DetailView):
     model = Dish
     context_object_name = "dish"
     template_name = 'menu/dish_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(DishDetailView, self).get_context_data()
+        context['addForm'] = AddToCartForm()
+        return context
