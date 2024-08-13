@@ -35,6 +35,9 @@
               {% endfor %}
           </ul>
         </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'cart-detail' %}">Кошик</a>
+        </li>
       </ul>
      {% if request.user.is_authenticated %}
           <form action="{% url 'accounts:logout' %}" method="post">
@@ -44,7 +47,7 @@
               </button>
           </form>
         {% else %}
-         <a href="accounts:login" class="btn btn-outline-light">
+         <a href="{% url 'accounts:login' %}" class="btn btn-outline-light">
                     Login
               </a>
      {% endif %}

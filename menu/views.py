@@ -11,7 +11,7 @@ class MenuList(ListView):
     model = Dish
     context_object_name = "menu_list"
     template_name = "menu/menu_list.html"
-    paginate_by = 10
+    # paginate_by = 10
 
 
 class CategoryList(DetailView):

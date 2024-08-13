@@ -9,6 +9,7 @@ from menu.models import Dish
 class Cart(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE, related_name='cart')
     created_at=models.DateTimeField(auto_now_add=True)
+    is_ordered=models.BooleanField(default=False)
     class Meta:
         verbose_name='Кошик'
         verbose_name_plural='Кошики'
