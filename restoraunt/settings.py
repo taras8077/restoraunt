@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-hv)ic!uu447txm9q(rx_d
 DEBUG = os.environ.get('DEBUG', True)
 
 ALLOWED_HOSTS = [
-    os.environ.get('ALLOWED_HOSTS', '127.0.0.1')
+    os.environ.get('ALLOWED_HOST', '127.0.0.1')
 ]
 
 
