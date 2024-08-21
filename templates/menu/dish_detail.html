@@ -23,7 +23,7 @@
                <form action="{% url 'add-to-cart' pk=dish.pk %}" method="post">
                    {% csrf_token %}
                    {{ addForm.as_div }}
-                   <button type="submit" class="btn btn-primary mt-3">Додати до кошика</button>
+                   <button type="submit" class="btn btn-info mt-3">Додати до кошика</button>
                </form>
             {% else %}
             <span class="badge text-bg-secondary">Немає в наявності</span>

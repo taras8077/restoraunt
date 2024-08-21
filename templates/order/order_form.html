@@ -3,7 +3,7 @@
 {% block content %}
    <div class="container">
    {% include 'alerts.html' %}
-   <h1 class="text-center">Оформлення замовлення</h1>
+   <h1 class=" my-5">Оформлення замовлення</h1>
        <div class="row row-cols-1 row-cols-md-2">
            <div class="col">
          {% for item in cart.items.all %}
@@ -32,7 +32,7 @@
                     <form method="post">
           {% csrf_token %}
             {{ form.as_div }}
-           <button type="submit" class="btn btn-light"> Підтвердити </button>
+           <button type="submit" class="btn btn-info"> Підтвердити </button>
        </form>
             </div>
 

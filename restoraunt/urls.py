@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from menu import views
 from restoraunt import settings
 
 urlpatterns = [
@@ -27,5 +28,6 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('order/', include('order.urls')),
     path('reviews/', include('reviews.urls')),
+    path('', views.MenuList.as_view(), name='main-page'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

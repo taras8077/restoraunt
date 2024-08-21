@@ -68,3 +68,19 @@ class CreateOrderView(LoginRequiredMixin, CreateView):
         order.total_price = sum(item.dish.price * item.quantity for item in cart.items.all())
         order.save()
         return redirect('menu-list')
+
+
+class UserOrderListView(LoginRequiredMixin, ListView):
+    model = Order
+    template_name = "order/user_order_list.html"
+    context_object_name = "orders"
+
+    def get_queryset(self):
+        queryset = Order.objects.filter(user = self.request.user)
+        return queryset
+
+
+class OrderDeatilView(LoginRequiredMixin, DetailView):
+    model = Order
+    template_name = "order/order_detail.html"
+    context_object_name = "order"
